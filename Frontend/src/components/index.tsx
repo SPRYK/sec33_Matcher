@@ -4,6 +4,7 @@ import ComponentList from './ComponentList';
 import Button from './Button';
 import VerticalCard from './VerticalCard';
 import TaskCard from './TaskCard';
+import Footer from './Footer';
 import Input from './Input';
 
 export {
@@ -13,5 +14,6 @@ export {
     Button,
     VerticalCard,
     TaskCard,
+    Footer,
     Input,
 }
