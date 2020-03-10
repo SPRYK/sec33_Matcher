@@ -23,10 +23,10 @@ export default () => {
     </div>
     <div className="row messageTask">
       <div className="subhead">
-        Edit profile
+      <h5>Edit profile</h5>
       </div>
-      <div className="subhead">
-        Your tasks
+      <div className="subhead2">
+      <h5>Your task</h5>
       </div>
     </div>
     <div className="row createTaskTitle">
