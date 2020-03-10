@@ -18,7 +18,7 @@ export default () => {
     <div className="createTaskPage">
     <div className="row createTaskTitle">
       <div className="col-3">
-          <h4 className="createTaskHeader">Create Task</h4>
+          <h4 className="createTaskHeader">Edit Profile</h4>
       </div>
     </div>
     <div className="row messageTask">
@@ -28,26 +28,26 @@ export default () => {
     </div>
     <div className="row createTaskTitle">
       <div className="col-6">
-        <Input variant="filled" onChange={handleChange('text')} label="Task name" fullWidth />
+        <Input variant="filled" onChange={handleChange('text')} label="Name" fullWidth />
       </div>
       <div className="col-6">
-        <Input variant="filled" onChange={handleChange('text')} label="Location" fullWidth />
-      </div>
-    </div>
-    <div className="row createTaskTitle">
-      <div className="col-6">
-        <Input variant="filled" onChange={handleChange('text')} label="Cover image" fullWidth />
-      </div>
-      <div className="col-6">
-        <Select variant="filled" onChange={handleChange('text')} label="Task type" fullWidth />
+        <Input variant="filled" onChange={handleChange('text')} label="Surname" fullWidth />
       </div>
     </div>
     <div className="row createTaskTitle">
       <div className="col-6">
-        <Input variant="filled" onChange={handleChange('text')} label="Price rate per hour" fullWidth />
+        <Input variant="filled" onChange={handleChange('text')} label="Password" fullWidth />
+      </div>
+      <div className="col-6">
+      <Input variant="filled" onChange={handleChange('text')} label="Re-enter Password" fullWidth />
+      </div>
+    </div>
+    <div className="row createTaskTitle">
+      <div className="col-6">
+        <Input variant="filled" onChange={handleChange('text')} label="mail" fullWidth />
       </div>
       <div className="col-6 createTaskTitle">
-        <Button type="invert" fullWidth>Launch Task<Chevron style={{ strokeWidth: 1 }} />
+        <Button type="invert" fullWidth>Save changes<Chevron style={{ strokeWidth: 1 }} />
         </Button>
       </div>
     </div>
