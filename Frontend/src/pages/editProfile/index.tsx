@@ -22,8 +22,11 @@ export default () => {
       </div>
     </div>
     <div className="row messageTask">
-      <div className="col-8">
-        <p>You can create your task here. Click 'Launch task' after that.</p>
+      <div className="subhead">
+        Edit profile
+      </div>
+      <div className="subhead">
+        Your tasks
       </div>
     </div>
     <div className="row createTaskTitle">
