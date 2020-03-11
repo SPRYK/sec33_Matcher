@@ -7,6 +7,10 @@ interface UserProps {
   username: string;
 }
 
+const onclick = (e:any) => {
+  //
+}
+
 export default ({ username }: UserProps) => {
   return (
     <div className="dropdown">
@@ -21,7 +25,7 @@ export default ({ username }: UserProps) => {
       <div className="dropdown-content">
         <p>Profile</p>
         <p>Your Tasks</p>
-        <p>Sign out</p>
+        <p onClick={onclick}>Sign out</p>
       </div>
     </div>
   );
