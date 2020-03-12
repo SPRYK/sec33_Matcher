@@ -4,6 +4,7 @@ import HttpErrors from 'http-errors';
 import validator from 'validator';
 import pick from 'object.pick';
 import passport from 'passport';
+import { Role, PhotoStyles } from '../const';
 
 export default class UserController {
     static async createUser(req: any, res: any): Promise<void> {

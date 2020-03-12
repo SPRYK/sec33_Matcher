@@ -2,7 +2,7 @@ import express, { Application } from 'express';
 import * as dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
-import { UserController, AuthController } from './controllers';
+import { UserController, AuthController, TaskController } from './controllers';
 import { errorHandler, asyncHandler } from './utils/handlers';
 import { ensureLoggedIn } from './utils/userHandlers';
 import passport from 'passport';
@@ -11,6 +11,7 @@ import { IUser, User } from './models';
 import session from 'express-session';
 import { load as loadYAML } from 'yamljs';
 import * as swaggerUI from 'swagger-ui-express';
+import { taskRoute } from './routes';
 
 dotenv.config();
 
@@ -26,7 +27,7 @@ export default class FastphotoApp {
             process.env.DB_CONNECTION_URI || `mongodb://${process.env.DB_HOST}:27017/${process.env.DB_NAME}`,
             { useNewUrlParser: true, useUnifiedTopology: true },
             err => {
-                if (err) console.log('MongoDB Error');
+                if (err) console.log('MongoDB Error ' + err);
             },
         );
         mongoose.set('useCreateIndex', true);
@@ -74,6 +75,7 @@ export default class FastphotoApp {
         }
         /* End of middlewares */
 
+        // User Routing
         app.get('/', asyncHandler(UserController.hello));
 
         app.post('/register', asyncHandler(UserController.createUser));
@@ -87,6 +89,9 @@ export default class FastphotoApp {
         app.get('/whoami', ensureLoggedIn(), AuthController.whoami);
 
         app.get('/logout', AuthController.logout);
+
+        // app.post('/createtask', ensureLoggedIn(), asyncHandler(TaskController.createTask));
+        app.use('/task', taskRoute);
 
         /* Middleware for error handling */
         app.use(errorHandler);
